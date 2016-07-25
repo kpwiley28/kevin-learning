@@ -4,10 +4,10 @@
   "description": "Learning application for Kevin",
   "main": "server/index.js",
   "scripts": {
-    "develop": "npm run webpack -- -w && nodemon ./server",
-    "start": "node ./server",
+    "start": "babel-node ./server",
+    "styles": "stylus app/styles/global.styl -o public/css/global.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "webpack": "webpack -w"
   },
   "author": "Conar Welsh <conarw@gmail.com>",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "jade": "^1.11.0",
     "knex": "^0.11.7",
     "mysql": "^2.11.1",
+    "pug": "^2.0.0-beta4",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "redux": "^3.5.2",

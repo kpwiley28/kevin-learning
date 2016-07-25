@@ -2,6 +2,7 @@
  * Import dependencies
  */
 import path from 'path'
+import http from 'http'
 import express from 'express'
 import socketIo from 'socket.io'
 
@@ -10,7 +11,8 @@ import socketIo from 'socket.io'
  */
 const PORT = 3000
 const app = express()
-const io = socketIo(app)
+const server = http.Server(app)
+const io = socketIo(server)
 
 /**
  * Configure Application
@@ -26,7 +28,7 @@ app.get('/', (req, res, next) => {
 	res.render('index')
 })
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
 	console.log(`Application server listening on port: ${PORT}`)
 })
 
