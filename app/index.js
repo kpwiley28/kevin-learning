@@ -14,7 +14,14 @@ import { render } from 'react-dom'
  * What we should expect here is that **inside** of the "root" tag, we will see our
  * HTML element that we are creating here:  <div>Hello World</div>
  */
-render(
-	<div>Hello World</div>,
+ 
+let App = React.createClass({
+	render: function(){
+		return (<div>Hello World</div>);
+	}
+})
+
+React.render(
+	<App />,
 	document.getElementById('root')
 )
